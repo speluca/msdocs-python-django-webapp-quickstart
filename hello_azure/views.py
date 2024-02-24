@@ -16,7 +16,9 @@ def hello(request):
             return redirect('index')
         else:
             print("Request for hello page received with name=%s" % name)
-            context = {'name': name }
+            # Salva o nome no banco de dados ou em algum outro local adequado
+            # Aqui vamos apenas passar o nome para o contexto do template
+            context = {'name': name}
             return render(request, 'hello_azure/hello.html', context)
     else:
         return redirect('index')
